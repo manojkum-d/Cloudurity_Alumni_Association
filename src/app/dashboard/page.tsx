@@ -1,4 +1,4 @@
-import Search from '@/components/ui/search'
+import Search from '@/components/ui/Search'
 import React from 'react'
 
 type Props = {}

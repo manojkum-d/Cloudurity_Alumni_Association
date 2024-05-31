@@ -20,7 +20,7 @@ const AboutSection = () => {
               <p className="text-sm text-muted-foreground">Full Stack Developer</p>
             </div>
             <CardDescription>
-              I'm a passionate full stack developer with expertise in React, Node.js, and modern web technologies. I love building intuitive and visually appealing user interfaces while ensuring robust and scalable backend architectures.
+              I&apos;m a passionate full stack developer with expertise in React, Node.js, and modern web technologies. I love building intuitive and visually appealing user interfaces while ensuring robust and scalable backend architectures.
             </CardDescription>
           </div>
         </CardContent>

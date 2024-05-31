@@ -14,7 +14,7 @@ export default function Home() {
       </h2>
 
       <p className="leading-7 [&:not(:first-child)]:mt-6">
-      The Christ University Alumni Association is more than just a website. It's a place to reconnect with old friends, reminisce about cherished memories, and forge new connections that will last a lifetime.  We're here to reignite your school spirit, celebrate your achievements, and empower you to continue your legacy of success.
+      The Christ University Alumni Association is more than just a website. It&apos;s a place to reconnect with old friends, reminisce about cherished memories, and forge new connections that will last a lifetime.  We&apos;re here to reignite your school spirit, celebrate your achievements, and empower you to continue your legacy of success.
        Dive in, explore, and rediscover the magic of being a christite! 
       </p>
       

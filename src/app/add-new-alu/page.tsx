@@ -1,4 +1,5 @@
-import { useState } from "react";
+'use client';
+
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -15,6 +16,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { DatePicker } from "@nextui-org/react";
+import { useState } from "react";
 
 const AddNewAlu = () => {
   const formSchema = z.object({
@@ -89,7 +91,147 @@ const AddNewAlu = () => {
         <h1 className="scroll-m-20 text-5xl font-extrabold tracking-tight lg:text-5xl mb-2">Add new Alumni</h1>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Form fields */}
+            <FormField
+              control={form.control}
+              name="name"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Name</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Enter your name" {...field} className="rounded-md" />
+                  </FormControl>
+                  <FormDescription>Enter your full name.</FormDescription>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Email</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Enter your email" {...field} className="rounded-md" />
+                  </FormControl>
+                  <FormDescription>Enter your email address.</FormDescription>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="yearOfPassed"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Year of Passed</FormLabel>
+                  <FormControl>
+                    <Input type="number" placeholder="Enter year of passed" {...field} className="rounded-md" />
+                  </FormControl>
+                  <FormDescription>Enter the year you passed.</FormDescription>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="department"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Department</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Enter department" {...field} className="rounded-md" />
+                  </FormControl>
+                  <FormDescription>Enter your department.</FormDescription>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="specialization"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Specialization</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Enter specialization" {...field} className="rounded-md" />
+                  </FormControl>
+                  <FormDescription>Enter your specialization.</FormDescription>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="cocurricular"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Co-curricular Activities</FormLabel>
+                  <FormControl>
+                    <Textarea placeholder="Enter co-curricular activities" {...field} className="rounded-md" />
+                  </FormControl>
+                  <FormDescription>Enter your co-curricular activities.</FormDescription>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="phoneNumber"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Phone Number</FormLabel>
+                  <FormControl>
+                    <Input type="tel" placeholder="Enter phone number" {...field} className="rounded-md" />
+                  </FormControl>
+                  <FormDescription>Enter your phone number.</FormDescription>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="extracurricular"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Extra-curricular Activities</FormLabel>
+                  <FormControl>
+                    <Textarea placeholder="Enter extra-curricular activities" {...field} className="rounded-md" />
+                  </FormControl>
+                  <FormDescription>Enter your extra-curricular activities.</FormDescription>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="dateOfBirth"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Date of Birth</FormLabel>
+                  <FormControl>
+                    <DatePicker
+                      
+                      className="rounded-md"
+                    />
+                  </FormControl>
+                  <FormDescription>Enter your date of birth.</FormDescription>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <div className="md:col-span-2">
+              <Button type="submit" className="w-full rounded-md">Save</Button>
+            </div>
           </form>
         </Form>
       </div>

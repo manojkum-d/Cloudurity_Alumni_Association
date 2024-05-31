@@ -18,7 +18,7 @@ export default function Home() {
        Dive in, explore, and rediscover the magic of being a christite! 
       </p>
       
-      <Link href='/dashboard' className="flex cursor-pointer bg-blue-500 p-5 w-fit">
+      <Link href='/alumni_list' className="flex cursor-pointer bg-blue-500 p-5 w-fit">
           Connect Now!
           <ArrowRight className="ml-10"/>
           </Link>  

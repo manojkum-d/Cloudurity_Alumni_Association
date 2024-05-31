@@ -28,7 +28,7 @@ async function deleteAlumni(id: string){
     }
 }
 
-//delete a Alumni
+//update a Alumni
 async function updateAlumni(id: string,data:{
     name: string;
     dob: String;

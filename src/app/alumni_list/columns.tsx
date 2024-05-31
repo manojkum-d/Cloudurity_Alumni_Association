@@ -1,8 +1,9 @@
-// columns.ts
-import React from 'react';
+'use client'
 import { User, Tooltip, Chip } from '@nextui-org/react';
 import { DeleteIcon, EditIcon, EyeIcon } from '@/components/ui/Icon';
 import { ChipProps } from "@nextui-org/react";
+import { mutate } from 'swr';
+import { useState } from 'react';
 
 const statusColorMap: Record<string, ChipProps["color"]> = {
   active: "success",
@@ -25,20 +26,22 @@ export interface Alumni {
 }
 
 export const columns = [
-  { key: "name", label: "Name" },
-  { key: "email", label: "Email" },
-  { key: "department", label: "Department" },
-  { key: "yearofpassed", label: "Year of Passed" },
-  { key: "specialization", label: "Specialization" },
-  { key: "cocurricular", label: "Co-curricular Activities" },
-  { key: "phoneno", label: "Phone Number" },
-  { key: "extracurricular", label: "Extra-curricular Activities" },
-  { key: "dob", label: "Date of Birth" },
-  { key: "actions", label: "Actions" }, 
+  { key: "name", label: "Name", sortable: true },
+  { key: "email", label: "Email", sortable: false },
+  { key: "yearofpassed", label: "Year of Passed", sortable: true },
+  { key: "department", label: "Department", sortable: false },
+  { key: "specialization", label: "Specialization", sortable: false },
+  { key: "cocurricular", label: "Co-curricular", sortable: false },
+  { key: "phoneno", label: "Phone No", sortable: false },
+  { key: "extracurricular", label: "Extra-curricular", sortable: false },
+  { key: "dob", label: "Date of Birth", sortable: true },
+  { key: "actions", label: "Actions", sortable: false },
+
 ];
 
 export const renderCell = (alumni: Alumni, columnKey: React.Key) => {
   const cellValue = alumni[columnKey as keyof Alumni];
+ 
 
   if (Array.isArray(cellValue)) {
     return cellValue.join(', ');
@@ -86,7 +89,10 @@ export const renderCell = (alumni: Alumni, columnKey: React.Key) => {
               </span>
             </Tooltip>
             <Tooltip color="danger" content="Delete user">
-              <span className="text-lg text-danger cursor-pointer active:opacity-50">
+              <span
+                className="text-lg text-danger cursor-pointer active:opacity-50"
+                
+              >
                 <DeleteIcon />
               </span>
             </Tooltip>

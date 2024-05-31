@@ -1,6 +1,11 @@
 ##Screen Shots
 ![image](https://github.com/manojkum-d/Cloudurity_Alumni_Association/assets/141437046/8a196d5d-3d49-4f65-86b3-3f83006e66d8)
+
+
 ![image](https://github.com/manojkum-d/Cloudurity_Alumni_Association/assets/141437046/f67a9916-0bd1-481a-8403-928fbbad9328)
+
+
+
 ![image](https://github.com/manojkum-d/Cloudurity_Alumni_Association/assets/141437046/949ca4fc-ca1d-4db5-8bdf-1f82c9e365e7)
 
 

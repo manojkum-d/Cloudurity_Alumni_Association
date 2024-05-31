@@ -1,14 +1,14 @@
-import Search from '@/components/ui/Search'
+// import TableUi from '@/components/ui/TableUi'
 import React from 'react'
 
 type Props = {}
 
-const Dashboard = (props: Props) => {
+const dashboard = (props: Props) => {
   return (
-    <div>
-        <Search/>
+    <div className='w-[50%] flex flex-col ml-10'>
+      {/* <TableUi/> */}
     </div>
   )
 }
 
-export default Dashboard
+export default dashboard

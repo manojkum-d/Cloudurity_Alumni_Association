@@ -33,11 +33,13 @@ async function updateAlumni(id: string,data:{
     name: string;
     dob: String;
     email: string;
+    department:string,
     yearofpassed: number;
     specialization: string;
     extracurricular: string[];
-    cocuricular: string[];
-    phoneno: number;
+    cocurricular: string[];
+    phoneno: string;
+    img:string
 }){
     try {
         const response = await database.updateDocument( process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID as string,"6658b3c20028949ba339", id,data)

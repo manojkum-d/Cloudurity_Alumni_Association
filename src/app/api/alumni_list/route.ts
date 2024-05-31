@@ -12,15 +12,16 @@ async function createAlumni(data:{
   yearofpassed: number;
   specialization: string;
   extracurricular: string[];
-  cocuricular: string[];
-  phoneno: number;
+  cocurricular: string[];
+  phoneno: string;
+  image:string
 }) {
     try {
         const response =await database.createDocument(process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID as string,"6658b3c20028949ba339", ID.unique(),
     data);
         return response;
     } catch (error) {
-        console.log('Error Creating interpretation',error);
+        console.log('Error Creating alumni',error);
         throw new Error("Failed to create Alumni")
     }
 }
@@ -39,8 +40,8 @@ async function fetchAlumni() {
 
 export async function POST(req:Request){
     try {
-            const{name,dob,email,yearofpassed,specialization,extracurricular ,cocuricular,phoneno} = await req.json();
-        const data ={name,dob,email,yearofpassed,specialization,extracurricular ,cocuricular,phoneno};
+            const{name,dob,email,department,yearofpassed,specialization,extracurricular ,cocurricular,phoneno,image} = await req.json();
+        const data ={name,dob,email,department,yearofpassed,specialization,extracurricular ,cocurricular,phoneno,image};
         const response = await createAlumni(data);
         return NextResponse.json({message:"Alumni Created"});
     } catch (error) {
